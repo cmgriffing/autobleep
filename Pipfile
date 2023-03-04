@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+whisper-timestamped = {git = "https://github.com/linto-ai/whisper-timestamped"}
+pyaudio = "*"
+argparse = "*"
+scipy = "*"
+numpy = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+tests = "python3 ./main.py"
