@@ -48,7 +48,7 @@ class AutoBleep:
             f"volume=enable='between(t,{previous_filter_end},{length})':volume=0"
         )
 
-        ffmpeg_command = f"ffmpeg -hide_banner -i {input} -f lavfi -i \"sine=frequency=1000:sample_rate=48000\" -filter_complex \"[0:a]volume=1,{','.join(base_filters)}[0x];[1:a]volume=1,{','.join(bleep_filters)}[1x];[0x][1x]amix=inputs=2:duration=first\" -c:a aac -q:a 4 -y {output}"
+        ffmpeg_command = f"ffmpeg -hide_banner -i {input} -f lavfi -i \"sine=frequency=1000\" -filter_complex \"[0:a]volume=1,{','.join(base_filters)}[0x];[1:a]volume=1,{','.join(bleep_filters)}[1x];[0x][1x]amix=inputs=2:duration=first\" -c:a aac -q:a 4 -y {output}"
 
         print("\n ffmpeg command", ffmpeg_command, "\n \n")
 
