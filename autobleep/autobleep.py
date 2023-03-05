@@ -2,7 +2,7 @@ import subprocess
 import whisper_timestamped as whisper
 
 # TODO: Make this dynamic based on a local JSON file
-swear_words = [
+default_swear_words = [
     "fuck",
     "bitch",
     "shit",
@@ -13,7 +13,13 @@ swear_words = [
 
 
 class AutoBleep:
-    def __init__(self, input, output="./bleeped_output.mka", language="en"):
+    def __init__(
+        self,
+        input,
+        output="./outputs/output.mka",
+        language="en",
+        swear_words=default_swear_words,
+    ):
         audio = whisper.load_audio(input)
 
         model = whisper.load_model("tiny", device="cpu")

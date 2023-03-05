@@ -5,10 +5,7 @@ name = "pypi"
 
 [packages]
 whisper-timestamped = {git = "https://github.com/linto-ai/whisper-timestamped"}
-pyaudio = "*"
 argparse = "*"
-scipy = "*"
-numpy = "*"
 
 [dev-packages]
 black = "*"
