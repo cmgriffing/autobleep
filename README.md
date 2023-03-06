@@ -1,6 +1,6 @@
 # AutoBleep (formerly known as Bleep It!)
 
-This library/tool is just a thin wrapper around [whisper_timestamped]() and [ffmpeg]().
+This library/tool is just a thin wrapper around [whisper_timestamped](https://github.com/linto-ai/whisper-timestamped) and [ffmpeg](https://ffmpeg.org/).
 
 It was made for a very specific use case. If you think we can improve general usability via better commands and help docs, please create an Issue and/or Pull Request.
 
