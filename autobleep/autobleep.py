@@ -17,7 +17,7 @@ class AutoBleep:
     def __init__(
         self,
         input,
-        output="./output/output.mka",
+        output,
         language="en",
         swear_words=default_swear_words,
     ):

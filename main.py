@@ -16,4 +16,4 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-autobleep = AutoBleep(args.input)
+autobleep = AutoBleep(args.input, args.output)

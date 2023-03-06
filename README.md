@@ -45,11 +45,20 @@ python3 ./main.py --input=./examples/example1.mkv --output=./output/output.mka
 
 Make sure to replace the input and output files with your own values.
 
+### Docker
+If you are unable to install neccessary dependencies you may try running docker command instead as follows:
+
+```bash
+docker run --rm -it --volume "$(pwd)/examples/example1.mkv:/input/input.mkv" --volume "$(pwd)/output:/output" autobleep/bleep
+```
+
+User permissions no worked out full and may need to own output with `chown ./output/output.mka`
+
 ## Roadmap
 
 This script was put together quickly to accomplish one specific workflow. It would be nice to improve ths app in several ways.
 
-- Bundled dependencies: `python3` and `ffmpeg` are the big dependencies that are required at the OS level. `whisper_timestamped` is the main pytho9n dependency. Bundling all of this into a single portable executable would be very nice.
+- Bundled dependencies: `python3` and `ffmpeg` are the big dependencies that are required at the OS level. `whisper_timestamped` is the main python dependency. Bundling all of this into a single portable executable would be very nice.
 
 - UI: A UI in which you could fine tune the placement of "bleeps" would be nice.
 
