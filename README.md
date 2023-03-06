@@ -29,6 +29,12 @@ pipenv shell
 pipenv install
 ```
 
+The `Locking...` step can take a while. If you would like to use the locked version of dependencies you can use:
+
+```
+pipenv install --ignore-pipfile
+```
+
 ## Usage
 
 The current way of running the application is to use this command in your pipenv shell:

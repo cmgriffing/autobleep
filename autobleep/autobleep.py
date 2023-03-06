@@ -1,4 +1,5 @@
 import subprocess
+from pathlib import Path
 import whisper_timestamped as whisper
 
 # TODO: Make this dynamic based on a local JSON file
@@ -16,7 +17,7 @@ class AutoBleep:
     def __init__(
         self,
         input,
-        output="./outputs/output.mka",
+        output="./output/output.mka",
         language="en",
         swear_words=default_swear_words,
     ):
@@ -53,6 +54,8 @@ class AutoBleep:
         bleep_filters.append(
             f"volume=enable='between(t,{previous_filter_end},{length})':volume=0"
         )
+
+        Path(output).parent.mkdir(parents=True, exist_ok=True)
 
         ffmpeg_command = f"ffmpeg -hide_banner -i {input} -f lavfi -i \"sine=frequency=1000\" -filter_complex \"[0:a]volume=1,{','.join(base_filters)}[0x];[1:a]volume=1,{','.join(bleep_filters)}[1x];[0x][1x]amix=inputs=2:duration=first\" -c:a aac -q:a 4 -y {output}"
 
