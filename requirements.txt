@@ -17,7 +17,6 @@ matplotlib==3.7.0
 more-itertools==9.1.0
 mypy-extensions==1.0.0
 numpy==1.24.2
-openai-whisper @ git+https://github.com/openai/whisper.git@7858aa9c08d98f75575035ecd6481f462d66ca27
 packaging==23.0
 pathspec==0.11.0
 Pillow==9.4.0
