@@ -1,8 +1,17 @@
+import json
+import logging
 import subprocess
+import sys
+
 from pathlib import Path
+
 import whisper_timestamped as whisper
 
-# TODO: Make this dynamic based on a local JSON file
+# set a simple logger
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+
 default_swear_words = [
     "fuck",
     "bitch",
@@ -12,15 +21,35 @@ default_swear_words = [
     # Companies I don't want to promote?
 ]
 
+def load_swear_words(path : str):
+    try:
+        with open(path, "r") as fp:
+            swear_words = json.load(fp)
+
+        swear_words = swear_words["words"]
+
+    except Exception:
+        logger.error("ERROR: Make sure your JSON file is correctly formatted.")
+        sys.exit()
+
+    return swear_words
+
 
 class AutoBleep:
     def __init__(
         self,
         input,
+        swear_words=None,
         output="./output/output.mka",
         language="en",
-        swear_words=default_swear_words,
     ):
+
+        if swear_words is None:
+            swear_words = default_swear_words
+        else:
+            swear_words = load_swear_words(swear_words)
+
+
         audio = whisper.load_audio(input)
 
         model = whisper.load_model("tiny", device="cpu")

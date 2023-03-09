@@ -43,6 +43,11 @@ The current way of running the application is to use this command in your pipenv
 python3 ./main.py --input=./examples/example1.mkv --output=./output/output.mka
 ```
 
+Or do it with a custom JSON file containing words to bleep.
+```
+python3 ./main.py --input=./examples/example1.mkv --output=./output/output.mka --swear_words=./examples/bleep.json
+```
+
 Make sure to replace the input and output files with your own values.
 
 ## Roadmap
