@@ -47,7 +47,7 @@ Make sure to replace the input and output files with your own values.
 
 ## Roadmap
 
-This script was put together quickly to accomplish one specific workflow. It would be nice to improve ths app in several ways.
+This script was put together quickly to accomplish one specific workflow. It would be nice to improve this app in several ways.
 
 - Bundled dependencies: `python3` and `ffmpeg` are the big dependencies that are required at the OS level. `whisper_timestamped` is the main pytho9n dependency. Bundling all of this into a single portable executable would be very nice.
 
