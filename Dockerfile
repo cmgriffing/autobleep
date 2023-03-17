@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.10
 
 RUN apt update && \
   apt install portaudio19-dev -y && \
@@ -7,7 +7,7 @@ RUN apt update && \
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 

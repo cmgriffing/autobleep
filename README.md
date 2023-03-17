@@ -54,7 +54,7 @@ Make sure to replace the input and output files with your own values.
 If you are unable to install neccessary dependencies you may try running docker command instead as follows:
 
 ```bash
-docker run --rm -it --volume "$(pwd)/examples/example1.mkv:/input/input.mkv" --volume "$(pwd)/output:/output" autobleep/bleep
+docker run --rm -it -v "$(pwd)/examples/example1.mkv:/input/input.mkv" -v "$(pwd)/output:/output" autobleep/bleep
 ```
 
 User permissions no worked out full and may need to own output with `chown ./output/output.mka`
