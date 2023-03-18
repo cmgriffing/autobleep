@@ -1,0 +1,19 @@
+[project]
+name = "autobleep"
+version = "0.0.0"
+description = "Automatically generate bleeped audio from video files"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+
+authors = [
+  {email = "cmgriffing@gmail.com"},
+  {name = "Chris Griffing"}
+]
+
+dependencies = [
+  "whisper-timestamped @ git+https://github.com/linto-ai/whisper-timestamped"
+]
+
+[project.scripts]
+autobleep = "autobleep.cli:main"
