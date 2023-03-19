@@ -17,14 +17,22 @@ Most of this library's documentation assumes `pip` and `pipenv` with python3 to 
 
 No testing has been done without these requirements. If you would like to see docs for other tools/etc please create an issue or PR.
 
+## Installation
+
+### Using Pip
+
+```
+pip install git+https://github.com/cmgriffing/autobleep.git
+```
+
+### Using Pipenv
+Clone the repo.
+
 Use this to establish the pipfile-based python env:
 
 ```
 pipenv shell
 ```
-
-## Installation
-
 ```
 pipenv install
 ```
@@ -37,6 +45,18 @@ pipenv install --ignore-pipfile
 
 ## Usage
 
+### If Installed With Pip
+```
+autobleep --input=./examples/example1.mkv --output=./output/output.mka
+```
+
+Or do it with a custom JSON file containing words to bleep.
+```
+autobleep --input=./examples/example1.mkv --output=./output/output.mka --swear_words=./examples/bleep.json
+```
+
+
+### If Installed With Pipenv
 The current way of running the application is to use this command in your pipenv shell:
 
 ```
