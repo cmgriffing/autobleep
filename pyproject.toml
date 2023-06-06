@@ -15,5 +15,10 @@ dependencies = [
   "whisper-timestamped @ git+https://github.com/linto-ai/whisper-timestamped"
 ]
 
+[project.optional-dependencies]
+dev = [
+  "black==23.1.0",
+]
+
 [project.scripts]
 autobleep = "autobleep.cli:main"

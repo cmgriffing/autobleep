@@ -89,6 +89,16 @@ This script was put together quickly to accomplish one specific workflow. It wou
 
 - Video Editor plugins: If portability/bundling can be achieved it would be nice to have this functionality exist within your video editor of choice as a plugin.
 
+## Contributing
+
+This project uses black for formatting the code.
+
+Install the package with its development dependencies. This makes sure you are developing with the same version as the github actions workflows.
+
+```
+pip install "autobleep[dev] @ git+https://github.com/cmgriffing/autobleep.git"
+```
+
 ## License
 
 Copyright 2023 Chris Griffing
