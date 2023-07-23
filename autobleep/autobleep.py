@@ -21,7 +21,8 @@ default_swear_words = [
     # Companies I don't want to promote?
 ]
 
-def load_swear_words(path : str):
+
+def load_swear_words(path: str):
     try:
         with open(path, "r") as fp:
             swear_words = json.load(fp)
@@ -43,12 +44,10 @@ class AutoBleep:
         output="./output/output.mka",
         language="en",
     ):
-
         if swear_words is None:
             swear_words = default_swear_words
         else:
             swear_words = load_swear_words(swear_words)
-
 
         audio = whisper.load_audio(input)
 

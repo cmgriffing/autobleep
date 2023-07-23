@@ -14,7 +14,8 @@ parser.add_argument(
     "-o", "--output", dest="output", help="the destination output file path"
 )
 parser.add_argument(
-    "-s", "--swear_words", dest="swear_words", help="JSON file with words to bleep")
+    "-s", "--swear_words", dest="swear_words", help="JSON file with words to bleep"
+)
 
 args = parser.parse_args()
 
